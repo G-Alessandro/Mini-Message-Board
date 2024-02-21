@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  each message in messages
+    h1= message.user
+    p= message.text
+    p= message.added
+  a(href='/new') Add New User
